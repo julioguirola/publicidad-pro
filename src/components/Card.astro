@@ -1,0 +1,32 @@
+---
+const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.props
+---
+
+<article>
+	<p>{title}</p>
+	<h1>{price}</h1>
+	<h4>CUP / Mes</h3>
+	<p><img src="brand-whatsapp.svg" />Publicación diaria en {whatsapp_cant} grupos de WhatsApp </p>
+	<p><img src="brand-telegram.svg" />Publicación en {telegram_cant} Grupos de Telegram cada 8 horas </p>
+	<p><img src="brand-facebook.svg" />Publicación en grupos de Facebook {facebook_cant} veces al mes (Grupos Aleatorios) </p>
+	<a href={text}><button>Solicitar</button></a>
+</article>
+
+<style>
+	article {
+		width: 300px;
+		border: 1px solid black;
+		border-radius: 10px;
+		text-align: center;
+		gap: 10px;
+		padding: 10px;
+	}
+
+	button {
+		height: 40px;
+		width: 180px;
+		border: 2px solid black;
+		border-radius: 10px;
+		background-color: inherit;
+	}
+</style>

@@ -1,0 +1,32 @@
+---
+import Header from "../components/Header.astro"
+import Card from "../components/Card.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>PublicidadPro</title>
+	</head>
+	<body>
+	<Header />
+	<main>
+		<Card title="#1 Básico" price="1000" whatsapp_cant="10" telegram_cant="45" facebook_cant="30" text="https://wa.me/5356909921?text=#1%Básico" />
+		<Card title="#2 Standard" price="1800" whatsapp_cant="160" telegram_cant="45" facebook_cant="65" text="https://wa.me/5356909921?text=#2%Standard"/>
+		<Card title="#3 PRO" price="2600" whatsapp_cant="90" telegram_cant="45" facebook_cant="300" text="https://wa.me/5356909921?text=#3%PRO"/>
+		<Card title="#4 PREMIUM" price="3800" whatsapp_cant="350" telegram_cant="45" facebook_cant="180" text="https://wa.me/5356909921?text=#4%PREMIUM"/>
+	</main>
+	</body>
+</html>
+
+<style>
+	main {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+	}
+</style>
