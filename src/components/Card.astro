@@ -1,5 +1,5 @@
 ---
-const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.props
+const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.props.contenido
 ---
 
 <article>
@@ -16,9 +16,8 @@ const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.
 	article {
 		width: 300px;
 		border: 1px solid black;
-		border-radius: 10px;
+		border-radius: 50px;
 		text-align: center;
-		gap: 10px;
 		padding: 10px;
 	}
 

@@ -1,0 +1,47 @@
+---
+const {img, text, side} = Astro.props
+---
+
+<article>
+	
+	{
+		side ? <>
+			<img src={img} />
+			<h2>{text}</h2>
+		</> : <>
+			<h2>{text}</h2>
+			<img src={img} />
+		</>
+	}
+
+</article>
+
+
+<style>
+/*
+	:root {
+		--anchoimgpromo: 400px;
+	}
+
+	@media (max-width: 500px) {
+		:root {
+			--anchoimgpromo: 200px;
+		}
+	}*/
+
+	img {
+		width: 200px;
+	}
+
+	article {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		gap: 10px;
+	}
+
+	h2 {
+		color: #757575;
+	}
+	
+</style>
