@@ -1,17 +1,91 @@
 ---
-
+///<img src="menu-2.svg">
 ---
 
 <header>
   <img src="sitename.svg">
-  <img src="menu-2.svg">
+  <div id="menu"></div>
 </header>
+
+<script>
+  function addNodes (root, nodes) {
+    for (let node of nodes) {
+      root.append(node)
+    }
+  }
+
+  const $ = (elm) => document.querySelector(elm)
+  const $$ = (elm) => document.createElement(elm)
+
+  const menu = $$("img")
+  menu.src = "menu-2.svg"
+
+  const aInicio = $$("a")
+  aInicio.innerText = "Inicio"
+  aInicio.href = "#"
+  aInicio.style.textDecoration = "none"
+  const aServicios = $$("a")
+  aServicios.innerText = "Servicios"
+  aServicios.href = "#promo"
+  aServicios.style.textDecoration = "none"
+  const aPlanes = $$("a")
+  aPlanes.innerText = "Planes"
+  aPlanes.href = "#planes"
+  aPlanes.style.textDecoration = "none"
+
+  const menuresp = $("#menu")
+  const modalcontent = $("#modalcontent")
+  const modal = $("#modal")
+
+  if (window.innerWidth <= 500) {
+    addNodes(menuresp, [menu])
+    addNodes(modalcontent, [aInicio, aServicios, aPlanes])
+  } else {
+    addNodes(menuresp, [aInicio, aServicios, aPlanes])
+  }
+
+  window.onresize = () => {
+    menuresp.innerHTML = ""
+    if (window.innerWidth <= 500) {
+      addNodes(menuresp, [menu])
+      addNodes(modalcontent, [aInicio, aServicios, aPlanes])
+    } else {
+      addNodes(menuresp, [aInicio, aServicios, aPlanes])
+    }
+  }
+
+  menu.onclick = function() {
+    menu.src = "close.svg"
+    modal.style.display = "block";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      menu.src = "menu-2.svg"
+      modal.style.display = "none";
+    }
+  }
+
+</script>
 
 <style>
   header {
-    font-family: system-ui;
     display: flex;
     justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+  }
+
+  header img {
+    margin-top: 5px;
+  }
+
+  header div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
 </style>

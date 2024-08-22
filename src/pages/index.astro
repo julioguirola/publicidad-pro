@@ -36,7 +36,7 @@ const pro = {
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>PublicidadPro</title>
@@ -45,14 +45,27 @@ const pro = {
 	<Header />
 	<img class="background" src="/background.svg"></img>
 	<main>
-	<section class="promo">
-		<Promo img="promowhats.svg" text="Publicidad en +10 grupos de WhatsApp" side={true} />
-		<Promo img="promotelegram.svg" text="Anuncios en +20 grupos de Telegram" side={false} />
-		<Promo img="promofacebook.svg" text="Publicaciones en +8 grupos de WhatsApp" side={true} />
-		<Promo img="promopaquete.svg" text="Publicidad en el Paquete Semanal" side={false} />
-		<Promo img="promocolab.svg" text="Presentación en el muro de colaboradores" side={true} />
+	<div id="modal">
+		<div id="modalcontent"></div>
+	</div>
+	<section id="inicio">
+		<img src="publicidad.png" width=300>
+		<div id="inicioright">
+			<h4>Somos una agencia publicitaria dedicada a potenciar el crecimiento de nuestros clientes mediante estrategias de marketing y comunicación efectivas. Trabajamos en estrecha colaboración con nuestros clientes para garantizar que nuestras soluciones cumplan con sus objetivos comerciales específicos y superen las expectativas.</h4>
+			<div id="iniciobuttons">
+				<button id="button1">Servicios</button>
+				<button id="button2">Planes</button>
+			</div>
+		</div>
 	</section>
-	<section class="planes">
+	<section id="promo">
+		<Promo img="promowhats.svg" text="Publicidad en +20 grupos de WhatsApp" side={false} />
+		<Promo img="promotelegram.svg" text="Anuncios en +25 grupos de Telegram" side={true} />
+		<Promo img="promofacebook.svg" text="Publicaciones en +8 grupos de FaceBook" side={false} />
+		<Promo img="promopaquete.svg" text="Publicidad en el Paquete Semanal" side={true} />
+		<Promo img="promocolab.svg" text="Presentación en el muro de colaboradores" side={false} />
+	</section>
+	<section id="planes">
 		<Card contenido={basico} />
 		<Card contenido={standar} />
 		<Card contenido={pro} />
@@ -62,6 +75,48 @@ const pro = {
 </html>
 
 <style>
+
+	html {
+		scroll-behavior: smooth;
+    font-family: system-ui;
+	}
+
+	h4 {
+		color: #757575;
+		width: 300px;
+	}
+
+	#inicio {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-bottom: 40px;
+		margin-top: 20px;
+		flex-wrap: wrap;
+	}
+
+	#modal {
+		position: fixed;
+		z-index: 1;
+		left: 0;
+  	top: 0;
+		height: 100%;
+		width: 100%;
+		display: none;
+	}
+
+	#modalcontent{
+		background: rgba(255, 255, 255, 0.5);
+		width: 300px;
+		position: fixed;
+		top: 90px;
+		left: 25px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 10px;
+		border-radius: 5px;
+	}
 	
 	.background {
 		position: fixed;
@@ -70,18 +125,44 @@ const pro = {
 		z-index: -10;
 	}
 
-	.promo {
+	#promo {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
 		margin-bottom: 20px;
 	}
 
-	.planes {
+	#planes {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 20px;
 		justify-content: center;
 		align-items: center;
 	}
+
+	button {
+		height: 40px;
+		width: 100px;
+		border: 2px solid #8900FA;
+		border-radius: 10px;
+		background-color: inherit;
+	}
+
+	#iniciobuttons {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
 </style>
+
+<script>
+	const $ = (elm) => document.querySelector(elm)
+  const $$ = (elm) => document.createElement(elm)
+
+  $("#button1").onclick = () => {
+  	$("#promo").scrollIntoView()
+  }
+  $("#button2").onclick = () => {
+  	$("#planes").scrollIntoView()
+  }
+</script>
