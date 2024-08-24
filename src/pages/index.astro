@@ -76,6 +76,10 @@ const premium = {
 		<Promo img="promopaquete.svg" text="Publicidad en el Paquete Semanal" side={true} />
 		<Promo img="promocolab.svg" text="Presentación en el muro de colaboradores" side={false} />
 	</section>
+	<section id="infoplanes">
+		<h1>Planes</h1>
+		<p>Rebaja del <span style="color: #09f;">20%</span> para la recompra de planes</p>
+	</section>
 	<section id="planes">
 		<Card contenido={basico} />
 		<Card contenido={profesional} />
@@ -112,6 +116,7 @@ const premium = {
 		margin-top: 20px;
 		max-width: 350px;
 		flex-wrap: wrap;
+		text-align: justify;
 	}
 
 	#modal {
@@ -150,6 +155,13 @@ const premium = {
 		gap: 20px;
 		margin-bottom: 20px;
 		max-width: 720px;
+		justify-content: center;
+	}
+
+	#infoplanes {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
 	}
 
 	#planes {
