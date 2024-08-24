@@ -6,30 +6,41 @@ import Promo from "../components/Promo.astro"
 const basico = {
   title: '#1 Básico',
   price: '1000',
-  whatsapp_cant: '10',
-  telegram_cant: '45',
-  facebook_cant: '30',
+  whatsapp_cant: '8',
+  telegram_cant: '8',
+  facebook_cant: '2',
   text: 'https://wa.me/5356909921?text=Básico'
 }
 
-const standar = {
-  title: '#2 Standard',
-  price: '1800',
-  whatsapp_cant: '160',
-  telegram_cant: '45',
-  facebook_cant: '65',
-  text: 'https://wa.me/5356909921?text=Standard'
+const profesional = {
+  title: '#2 Profesional',
+  price: '1500',
+  whatsapp_cant: '14',
+  telegram_cant: '14',
+  facebook_cant: '5',
+  text: 'https://wa.me/5356909921?text=Deseo&solicitar&el&plan&Profesional'
 }
 
-const pro = {
-  title: '#3 PRO',
-  price: '2600',
-  whatsapp_cant: '90',
-  telegram_cant: '45',
-  facebook_cant: '300',
-  text: 'https://wa.me/5356909921?text=PRO'
+const avanzado = {
+  title: '#3 Avanzado',
+  price: '2000',
+  whatsapp_cant: '20',
+  telegram_cant: '25',
+  facebook_cant: '10',
+  paquete: true,
+  text: 'https://wa.me/5356909921?text=Deseo&solicitar&el&plan&Avanzado'
 }
 
+const premium = {
+  title: '#4 Premium',
+  price: '3000',
+  whatsapp_cant: '30',
+  telegram_cant: '30',
+  facebook_cant: '20',
+  paquete: true,
+  colab: true,
+  text: 'https://wa.me/5356909921?text=Deseo&solicitar&el&plan&Premium'
+}
 
 ---
 
@@ -67,8 +78,9 @@ const pro = {
 	</section>
 	<section id="planes">
 		<Card contenido={basico} />
-		<Card contenido={standar} />
-		<Card contenido={pro} />
+		<Card contenido={profesional} />
+		<Card contenido={avanzado} />
+		<Card contenido={premium} />
 	</section>
 	</main>
 	</body>

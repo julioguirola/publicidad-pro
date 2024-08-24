@@ -4,21 +4,27 @@ const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.
 
 <article>
 	<p>{title}</p>
-	<h1>{price}$</h1>
-	<h4>CUP / Mes</h3>
-	<p><img src="brand-whatsapp.svg" />Publicación diaria en {whatsapp_cant} grupos de WhatsApp </p>
-	<p><img src="brand-telegram.svg" />Publicación en {telegram_cant} Grupos de Telegram cada 8 horas </p>
-	<p><img src="brand-facebook.svg" />Publicación en grupos de Facebook {facebook_cant} veces al mes (Grupos Aleatorios) </p>
+	<h2>{price} $</h2>
+	<h4>CUP / Semanal</h4>
+	<p>Publicación diaria en:</p>
+	<div><img src="brand-whatsapp.svg" /><p>{whatsapp_cant} grupos de WhatsApp</p></div>
+	<div><img src="brand-telegram.svg" /><p>{telegram_cant} grupos de Telegram</p></div>
+	<div><img src="brand-facebook.svg" /><p>{facebook_cant} grupos de FaceBook</p></div>
 	<a href={text}><button>Solicitar</button></a>
 </article>
 
 <style>
 	article {
-		width: 300px;
+		width: 250px;
 		border: 1px solid black;
 		border-radius: 50px;
 		text-align: center;
 		padding: 10px;
+	}
+
+	article div {
+		display: flex;
+		justify-content: center;
 	}
 
 	button {
