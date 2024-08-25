@@ -1,5 +1,5 @@
 ---
-const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.props.contenido
+const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text, paquete, colab} = Astro.props.contenido
 ---
 
 <article>
@@ -10,6 +10,12 @@ const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.
 	<div><img src="brand-whatsapp.svg" /><p>{whatsapp_cant} grupos de WhatsApp</p></div>
 	<div><img src="brand-telegram.svg" /><p>{telegram_cant} grupos de Telegram</p></div>
 	<div><img src="brand-facebook.svg" /><p>{facebook_cant} grupos de FaceBook</p></div>
+	{
+		paquete && <p>Publicidad en el paquete semanal</p>
+	}
+	{
+		colab && <p>Presentación en nuestro muro de colaboradores</p>
+	}
 	<a href={text}><button>Solicitar</button></a>
 </article>
 
@@ -19,7 +25,7 @@ const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.
 		border: 1px solid black;
 		border-radius: 50px;
 		text-align: center;
-		padding: 10px;
+		padding: 20px;
 	}
 
 	article div {
@@ -31,7 +37,10 @@ const {title, price, whatsapp_cant, telegram_cant, facebook_cant, text} = Astro.
 		height: 40px;
 		width: 180px;
 		border: 2px solid #09f;
+		background-color: #09f;
+		color: white;
 		border-radius: 10px;
-		background-color: inherit;
+		font-size: 18px;
+		justify-self: end;
 	}
 </style>
