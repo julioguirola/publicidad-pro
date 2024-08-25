@@ -65,7 +65,7 @@
     modal.style.display = "block";
   }
 
-  window.onclick = function(event) {
+  document.onclick = function(event) {
     if (event.target == modal) {
       menu.src = "menu-2.svg"
       modal.style.display = "none";
@@ -79,6 +79,7 @@
     display: flex;
     justify-content: space-between;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     background-color: rgba(250, 250, 250, 0.95);
     border-radius: 25px;

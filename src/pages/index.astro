@@ -87,6 +87,7 @@ const premium = {
 		<Card contenido={avanzado} />
 		<Card contenido={premium} />
 	</section>
+	<button id="myBtn"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg></button>
 	</main>
 	</body>
 </html>
@@ -174,7 +175,7 @@ const premium = {
 		align-items: center;
 	}
 
-	button {
+	section button {
 		height: 40px;
 		width: 100px;
 		border: 2px solid #09f;
@@ -189,6 +190,25 @@ const premium = {
 		justify-content: space-evenly;
 		align-items: center;
 	}
+
+	#myBtn {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Fixed/sticky position */
+	  bottom: 20px; /* Place the button at the bottom of the page */
+	  right: 30px; /* Place the button 30px from the right */
+	  z-index: 99; /* Make sure it does not overlap */
+	  outline: none; /* Remove outline */
+	  background-color: inherit; /* Set a background color */
+	  cursor: pointer; /* Add a mouse pointer on hover */
+	  border-radius: 10px; /* Rounded corners */
+	  border: 2px solid #09f;
+	  color: #09f;
+	}
+
+	#myBtn:hover {
+	  color: white; /* Text color */
+	  background-color: #09f; /* Add a dark-grey background on hover */
+	}
 </style>
 
 <script>
@@ -201,4 +221,25 @@ const premium = {
   $("#button2").onclick = () => {
   	$("#planes").scrollIntoView()
   }
+
+  const mybutton = $("#myBtn")
+
+  window.onscroll = function() {scrollFunction()}
+
+
+	function scrollFunction() {
+  	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	    mybutton.style.display = "block";
+	  } else {
+	    mybutton.style.display = "none";
+	  }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	  document.body.scrollTop = 0; // For Safari
+	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+
+	mybutton.onclick = topFunction
 </script>
