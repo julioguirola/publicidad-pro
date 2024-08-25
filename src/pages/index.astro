@@ -205,10 +205,13 @@ const premium = {
 	  color: #09f;
 	}
 
-	#myBtn:hover {
-	  color: white; /* Text color */
-	  background-color: #09f; /* Add a dark-grey background on hover */
+	@media (min-width: 1000px) {
+		#myBtn:hover {
+		  color: white; /* Text color */
+	  	background-color: #09f; /* Add a dark-grey background on hover */
+		}
 	}
+
 </style>
 
 <script>
