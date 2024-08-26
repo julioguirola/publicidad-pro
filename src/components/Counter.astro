@@ -1,0 +1,28 @@
+---
+const {cant, text, adj} = Astro.props
+---
+
+<article>
+	<h1>{cant}</h1>
+	<p>{text} <span>{adj}</span></p>
+</article>
+
+<style>
+
+	h1 {
+		font-size: 30px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	
+	article {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		width: 250px;
+	}
+
+	article span {
+		color: #09f;
+	}
+</style>

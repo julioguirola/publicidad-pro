@@ -2,7 +2,9 @@
 ---
 
 <header>
-  <img src="sitename.svg">
+  <div id="logo">
+    <img src="sitename.svg">
+  </div>
   <div id="menu"></div>
 </header>
 
@@ -19,24 +21,22 @@
   const menu = $$("img")
   menu.src = "menu-2.svg"
 
-  const aInicio = $$("a")
-  aInicio.innerText = "Inicio"
-  aInicio.href = "#"
-  aInicio.style.textDecoration = "none"
-  aInicio.style.color = "#09f"
-  aInicio.style.fontSize = "20px"
-  const aServicios = $$("a")
-  aServicios.innerText = "Servicios"
-  aServicios.href = "#promo"
-  aServicios.style.textDecoration = "none"
-  aServicios.style.color = "#09f"
-  aServicios.style.fontSize = "20px"
-  const aPlanes = $$("a")
-  aPlanes.innerText = "Planes"
-  aPlanes.href = "#planes"
-  aPlanes.style.textDecoration = "none"
-  aPlanes.style.color = "#09f"
-  aPlanes.style.fontSize = "20px"
+  const anchors = [$$("a"), $$("a"), $$("a"), $$("a"), $$("a")]
+  const names = ["Inicio", "Servicios", "Planes", "Actividad", "Contacto"]
+  const points = ["#", "#promo", "#infoplanes","#counters", "#contact"]
+
+  const links = anchors.map((actual,i) => {
+    let name = names[i]
+    let point = points[i]
+
+    actual.innerText = name
+    actual.style.textDecoration = "none"
+    actual.style.fontSize = "20px"
+    actual.style.color = "#09f"
+    actual.href = point
+
+    return actual
+  })
 
   const menuresp = $("#menu")
   const modalcontent = $("#modalcontent")
@@ -44,18 +44,18 @@
 
   if (window.innerWidth <= 500) {
     addNodes(menuresp, [menu])
-    addNodes(modalcontent, [aInicio, aServicios, aPlanes])
+    addNodes(modalcontent, links)
   } else {
-    addNodes(menuresp, [aInicio, aServicios, aPlanes])
+    addNodes(menuresp, links)
   }
 
   window.onresize = () => {
     menuresp.innerHTML = ""
     if (window.innerWidth <= 500) {
       addNodes(menuresp, [menu])
-      addNodes(modalcontent, [aInicio, aServicios, aPlanes])
+      addNodes(modalcontent, links)
     } else {
-      addNodes(menuresp, [aInicio, aServicios, aPlanes])
+      addNodes(menuresp, links)
     }
   }
 
@@ -90,7 +90,7 @@
     margin-top: 5px;
   }
 
-  header div {
+  #menu {
     display: flex;
     align-items: center;
     gap: 10px;

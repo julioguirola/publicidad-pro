@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro"
 import Card from "../components/Card.astro"
 import Promo from "../components/Promo.astro"
+import Counter from "../components/Counter.astro"
 
 const basico = {
   title: '#1 Básico',
@@ -64,8 +65,8 @@ const premium = {
 		<div id="inicioright">
 			<h4>Somos una agencia publicitaria dedicada a potenciar el crecimiento de nuestros clientes mediante estrategias de marketing y comunicación efectivas. Trabajamos en estrecha colaboración con nuestros clientes para garantizar que nuestras soluciones cumplan con sus objetivos comerciales específicos y superen las expectativas.</h4>
 			<div id="iniciobuttons">
-				<button id="button1">Servicios</button>
-				<button id="button2">Planes</button>
+				<button id="button1">Planes</button>
+				<button id="button2">Contacto</button>
 			</div>
 		</div>
 	</section>
@@ -86,6 +87,20 @@ const premium = {
 		<Card contenido={profesional} />
 		<Card contenido={avanzado} />
 		<Card contenido={premium} />
+	</section>
+	<section id="counters">
+		<Counter cant="10" text="Anuncios" adj="activos"/>
+		<Counter cant="15" text="Clientes" adj="activos"/>
+		<Counter cant="0" text="Catálogos" adj="SOLICITA EL PRIMERO"/>
+	</section>
+	<h2 id="contact" style="width: 80vw; margin-top: 50px; margin-bottom: 20px; text-align: center;">Contacto</h2>
+	<section id="contacto">
+	<div>
+		<img src="brand-whatsapp.svg"><a style="text-decoration: none; color: #09f;" href="https://wa.me/5356909921">+5356909921</a>
+	</div>
+	<div>
+		<img src="brand-telegram.svg"><a style="text-decoration: none; color: #09f;" href="https://t.me/@Alain_PM">@Alain_PM</a>
+	</div>
 	</section>
 	<button id="myBtn"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg></button>
 	</main>
@@ -118,7 +133,6 @@ const premium = {
 		margin-top: 20px;
 		max-width: 350px;
 		flex-wrap: wrap;
-		text-align: justify;
 	}
 
 	#modal {
@@ -142,6 +156,7 @@ const premium = {
 		gap: 10px;
 		padding: 10px;
 		border-radius: 5px;
+		text-align: center;
 	}
 	
 	.background {
@@ -173,6 +188,30 @@ const premium = {
 		gap: 20px;
 		justify-content: center;
 		align-items: center;
+	}
+
+	#counters {
+		margin-top: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		border-bottom: 1px solid black;
+	}
+
+	#contacto {
+		display: flex;
+		width: 80vw;
+		justify-content: space-evenly;
+		margin-bottom: 50px;
+	}
+
+	#contacto div {
+		display: flex;
+		align-items: center;
+	}
+
+	#contacto img {
+		width: 24px;
 	}
 
 	section button {
@@ -219,10 +258,10 @@ const premium = {
   const $$ = (elm) => document.createElement(elm)
 
   $("#button1").onclick = () => {
-  	$("#promo").scrollIntoView()
+  	$("#infoplanes").scrollIntoView()
   }
   $("#button2").onclick = () => {
-  	$("#planes").scrollIntoView()
+  	$("#contact").scrollIntoView()
   }
 
   const mybutton = $("#myBtn")
