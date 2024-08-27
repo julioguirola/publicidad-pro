@@ -78,6 +78,10 @@ const premium = {
 		<Promo img="promocolab.svg" text="Presentación en el muro de colaboradores" side={false} />
 		<Promo img="promodiseñomsg.svg" text="Diseño de mensajes publicitarios y catálogos" side={true} />
 	</section>
+	<h2 id="colab" style="width: 80vw; margin-top: 50px; margin-bottom: 20px; text-align: center;">Colaboradores</h2>
+	<section id="colabs">
+		<a href="https://chat.whatsapp.com/Ct8EKdoEDlTAKXB0vn6Bb2"><img style="cursor: pointer;" src="colab1.png" width="150px"></a>
+	</section>
 	<section id="infoplanes">
 		<h1>Planes</h1>
 		<p>Rebaja del <span style="color: #09f;">20%</span> para la recompra de planes</p>
@@ -91,8 +95,8 @@ const premium = {
 		<Card contenido={premium} />
 	</section>
 	<section id="counters">
-		<Counter cant="1" text="Anuncios" adj="activos"/>
-		<Counter cant="2" text="Clientes" adj="activos"/>
+		<Counter cant="3" text="Anuncios" adj="activos"/>
+		<Counter cant="5" text="Clientes" adj="activos"/>
 		<Counter cant="0" text="Catálogos" adj="SOLICITA EL PRIMERO"/>
 	</section>
 	<h2 id="contact" style="width: 80vw; margin-top: 50px; margin-bottom: 20px; text-align: center;">Contacto</h2>
@@ -176,6 +180,15 @@ const premium = {
 		margin-top: 20px;
 		max-width: 720px;
 		justify-content: center;
+	}
+
+	#colabs {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+		justify-content: center;
+		width: 80vw;
+		margin-top: 20px;
 	}
 
 	#infoplanes {
