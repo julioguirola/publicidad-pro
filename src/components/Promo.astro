@@ -6,11 +6,11 @@ const {img, text, side} = Astro.props
 	
 	{
 		side ? <>
-			<img src={img} />
+			<img loading="lazy" src={img} />
 			<h2>{text}</h2>
 		</> : <>
 			<h2>{text}</h2>
-			<img src={img} />
+			<img loading="lazy" src={img} />
 		</>
 	}
 
