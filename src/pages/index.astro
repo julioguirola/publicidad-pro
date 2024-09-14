@@ -80,7 +80,21 @@ const premium = {
 	</section>
 	<h2 id="colab" style="width: 80vw; margin-top: 50px; margin-bottom: 20px; text-align: center;">Colaboradores</h2>
 	<section id="colabs">
-		<a href="https://chat.whatsapp.com/Ct8EKdoEDlTAKXB0vn6Bb2"><img  loading="lazy" style="cursor: pointer;" src="colab1.png" width="150px"></a>
+		<div>
+			<img  loading="lazy" src="colab1.png" width="150px" style="margin-bottom: 20px;">
+			<div>
+				<img width="24" src="brand-whatsapp.svg"></img>
+				<a href="https://chat.whatsapp.com/Ct8EKdoEDlTAKXB0vn6Bb2">Grupo</a>
+			</div>
+		</div>
+		<div>
+			<img style="border-radius: 5px;"  loading="lazy" src="colab2.jpeg" width="150px" style="margin-bottom: 20px;">
+			<div>
+				<img width="24" src="brand-whatsapp.svg"></img>
+				<a href="https://chat.whatsapp.com/CD6kHKLVChT4rlzsFE1mHc">Grupo</a>
+				<a href="https://wa.me/5351004240">Contacto</a>
+			</div>
+		</div>
 	</section>
 	<section id="infoplanes">
 		<h1>Planes</h1>
@@ -189,6 +203,13 @@ const premium = {
 		justify-content: center;
 		width: 80vw;
 		margin-top: 20px;
+		gap: 30px;
+	}
+
+	#colabs div div {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
 	}
 
 	#infoplanes {
